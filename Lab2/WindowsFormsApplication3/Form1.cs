@@ -27,41 +27,48 @@ namespace WindowsFormsApplication3
 
           private void button17_Click(object sender, EventArgs e)
           {
-               operand2 = Convert.ToDouble(textBox1.Text);
-               switch (operatie)
-               {
+            try
+            {
+                operand2 = Convert.ToDouble(textBox1.Text);
+                switch (operatie)
+                {
                     case "+":
-                         rezultat = operand2 + operand1;
-                         textBox1.Text = Convert.ToString(rezultat);
-                         break;
+                        rezultat = operand2 + operand1;
+                        textBox1.Text = Convert.ToString(rezultat);
+                        break;
                     case "-":
-                         rezultat = operand1 - operand2;
-                         textBox1.Text = Convert.ToString(rezultat);
-                         break;
+                        rezultat = operand1 - operand2;
+                        textBox1.Text = Convert.ToString(rezultat);
+                        break;
                     case "/":
-                         if(operand2 == 0)
-                         {
-                              textBox1.Text = "0.0";
-                              break;
-                         }
-                         else
-                         {
-                              rezultat = operand1 / operand2;
-                              textBox1.Text = Convert.ToString(rezultat);
-                              break;
-                         }
+                        if (operand2 == 0)
+                        {
+                            textBox1.Text = "0.0";
+                            break;
+                        }
+                        else
+                        {
+                            rezultat = operand1 / operand2;
+                            textBox1.Text = Convert.ToString(rezultat);
+                            break;
+                        }
 
                     case "*":
-                         rezultat = operand1 * operand2;
-                         textBox1.Text = Convert.ToString(rezultat);
-                         break;
+                        rezultat = operand1 * operand2;
+                        textBox1.Text = Convert.ToString(rezultat);
+                        break;
 
                     case "x^y":
-                         rezultat = System.Math.Pow(Convert.ToDouble(operand1), Convert.ToDouble(operand2));
-                         textBox1.Text = Convert.ToString(rezultat);
-                         break;
+                        rezultat = System.Math.Pow(Convert.ToDouble(operand1), Convert.ToDouble(operand2));
+                        textBox1.Text = Convert.ToString(rezultat);
+                        break;
 
-               }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Verificati parametrii si operatiile");
+            }
           }
 
           private void button16_Click(object sender, EventArgs e)
@@ -101,31 +108,59 @@ namespace WindowsFormsApplication3
 
           private void button14_Click(object sender, EventArgs e)
           {
-               operand1 = Convert.ToDouble(textBox1.Text);
-               operatie = "/";
-               textBox1.Clear();
+            try
+            {
+                operand1 = Convert.ToDouble(textBox1.Text);
+                operatie = "/";
+                textBox1.Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametrii");
+            }
           }
 
-          private void button13_Click(object sender, EventArgs e)
-          {
-               operand1 = Convert.ToDouble(textBox1.Text);
-               operatie = "-";
-               textBox1.Clear();
+        private void button13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                operand1 = Convert.ToDouble(textBox1.Text);
+                operatie = "-";
+                textBox1.Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametrii");
+            }
           }
 
           private void button12_Click(object sender, EventArgs e)
           {
-               operand1 = Convert.ToDouble(textBox1.Text);
-               operatie = "*";
-               textBox1.Clear();
+            try
+            {
+                operand1 = Convert.ToDouble(textBox1.Text);
+                operatie = "*";
+                textBox1.Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametrii");
+            }
                      
           }
 
           private void button9_Click(object sender, EventArgs e)
           {
-               operand1 = Convert.ToDouble(textBox1.Text);
-               operatie = "+";
-               textBox1.Clear();
+            try
+            {
+                operand1 = Convert.ToDouble(textBox1.Text);
+                operatie = "+";
+                textBox1.Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametrii");
+            }
           }
 
           private void button11_Click(object sender, EventArgs e)
@@ -184,61 +219,130 @@ namespace WindowsFormsApplication3
                textBox1.Text += "7";
           }
 
-          //functia de calcul
+          
 
           
 
           private void button20_Click(object sender, EventArgs e)
           {
-               rezultat = (System.Math.Sqrt(Convert.ToDouble(textBox1.Text)));
-               textBox1.Text = Convert.ToString(rezultat);
+            try {
+                rezultat = (System.Math.Sqrt(Convert.ToDouble(textBox1.Text)));
+                textBox1.Text = Convert.ToString(rezultat);
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametrii");
+            }
+               
           }
 
           private void button19_Click(object sender, EventArgs e)
           {
-               operand1 = Convert.ToDouble(textBox1.Text);
-               operatie = "x^y";
-               textBox1.Clear();
+            try {
+                operand1 = Convert.ToDouble(textBox1.Text);
+                operatie = "x^y";
+                textBox1.Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametrii");
+            }
+               
           }
 
           private void button22_Click(object sender, EventArgs e)
           {
-               textBox1.Text = Convert.ToString(System.Math.Sin(Convert.ToDouble(textBox1.Text)));
+            try
+            {
+                textBox1.Text = Convert.ToString(System.Math.Sin(Convert.ToDouble(textBox1.Text)));
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametrii");
+            }
           }
 
           private void button23_Click(object sender, EventArgs e)
           {
-               textBox1.Text = Convert.ToString(System.Math.Cos(Convert.ToDouble(textBox1.Text)));
+            try
+            {
+                textBox1.Text = Convert.ToString(System.Math.Cos(Convert.ToDouble(textBox1.Text)));
+            } catch
+            {
+                MessageBox.Show("Mai intii specificati parametru");
+            }
+               
           }
 
           private void button24_Click(object sender, EventArgs e)
           {
-               textBox1.Text = Convert.ToString(System.Math.Tan(Convert.ToDouble(textBox1.Text)));
-          }
+               
+            try
+            {
+                textBox1.Text = Convert.ToString(System.Math.Tan(Convert.ToDouble(textBox1.Text)));
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametru");
+            }
+        }
 
           private void button26_Click(object sender, EventArgs e)
           {
-               textBox1.Text = Convert.ToString(System.Math.Asin(Convert.ToDouble(textBox1.Text)));
-          }
+               
+            try
+            {
+                textBox1.Text = Convert.ToString(System.Math.Asin(Convert.ToDouble(textBox1.Text)));
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametru");
+            }
+        }
 
           private void button27_Click(object sender, EventArgs e)
           {
-               textBox1.Text = Convert.ToString(System.Math.Acos(Convert.ToDouble(textBox1.Text)));
-          }
+               
+            try
+            {
+                textBox1.Text = Convert.ToString(System.Math.Acos(Convert.ToDouble(textBox1.Text)));
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametru");
+            }
+        }
 
           private void button28_Click(object sender, EventArgs e)
           {
-               textBox1.Text = Convert.ToString(System.Math.Atan(Convert.ToDouble(textBox1.Text)));
-          }
+               
+            try
+            {
+                textBox1.Text = Convert.ToString(System.Math.Atan(Convert.ToDouble(textBox1.Text)));
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametru");
+            }
+        }
 
           private void button21_Click(object sender, EventArgs e)
           {
-               int var = 1;
-               for(int i = 1; i < Convert.ToInt16(textBox1.Text); i++)
-               {
+               
+            try
+            {
+                int var = 1;
+                for (int i = 1; i < Convert.ToInt16(textBox1.Text); i++)
+                {
                     var = i * var;
-               }
-               textBox1.Text = Convert.ToString(var);
+                }
+                textBox1.Text = Convert.ToString(var);
+            }
+            catch
+            {
+                MessageBox.Show("Mai intii specificati parametru");
+            }
+            
           }
 
           private void button25_Click(object sender, EventArgs e)
